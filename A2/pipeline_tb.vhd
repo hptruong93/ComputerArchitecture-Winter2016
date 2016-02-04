@@ -38,6 +38,24 @@ END PROCESS;
 stim_process: PROCESS
 BEGIN   
 	--TODO: Stimulate the inputs for the pipelined equation ((a + b) * 42) - (c * d * (a - e)) and assert the results
+	s_a <= 1;
+	s_b <= 1;
+	s_c <= 1;
+	s_d <= 1;
+	s_e <= 0;
+
+	WAIT FOR 3 * clk_period;
+	ASSERT (s_op1 = 2) REPORT "s_op1 not 2" SEVERITY ERROR;
+	ASSERT (s_op3 = 1) REPORT "s_op1 not 1" SEVERITY ERROR;
+	ASSERT (s_op4 = 1) REPORT "s_op1 not 1" SEVERITY ERROR;
+
+	ASSERT (s_op2 = 84) REPORT "s_op1 not 84" SEVERITY ERROR;
+	ASSERT (s_op5 = 1) REPORT "s_op1 not 1" SEVERITY ERROR;
+
+	ASSERT (s_final_output = 83) REPORT "Final result is not 83" SEVERITY ERROR;
+	REPORT "The value of 's_final_output' is " & integer'image(s_final_output);
+	REPORT "***************************************************************";
+
 	WAIT;
 END PROCESS stim_process;
 END;

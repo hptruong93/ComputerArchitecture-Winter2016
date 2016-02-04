@@ -21,7 +21,7 @@ vcom pipeline.vhd
 vcom pipeline_tb.vhd
 
 ;# Start simulation
-vsim pipeline_tb
+vsim -t ps pipeline_tb
 
 ;# Generate a clock with 1ns period
 force -deposit clk 0 0 ns, 1 0.5 ns -repeat 1 ns
