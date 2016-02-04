@@ -34,7 +34,7 @@ begin
     if reset = '1' then
         current_state <= A;
         output <= '0';  
-    elsif clk = '1' then
+    elsif clk = '1' and Clk'event then
         if current_state = A then
             if input = SLASH_CHARACTER then
                 current_state <= B;
