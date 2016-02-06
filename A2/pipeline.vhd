@@ -24,13 +24,13 @@ begin
 			i_op4 <= a - e;
 			i_op5 <= i_op3 * i_op4;
 			final_output <= i_op2 - i_op5;
-
-			op1 <= i_op1;
-			op2 <= i_op2;
-			op3 <= i_op3;
-			op4 <= i_op4;
-			op5 <= i_op5;
 		end if;
+
+		op1 <= i_op1;
+		op2 <= i_op2;
+		op3 <= i_op3;
+		op4 <= i_op4;
+		op5 <= i_op5;
 	end process;
 
 end behavioral;
