@@ -82,20 +82,18 @@ BEGIN
 	ASSERT (s_op2 = -252) REPORT "s_op2 not -252" SEVERITY ERROR;
 	ASSERT (s_op5 = 4) REPORT "s_op5 not 4" SEVERITY ERROR;
 
-	WAIT FOR 0.6 * clk_period;
 	ASSERT (s_op1 = 2) REPORT "s_op1 not 2" SEVERITY ERROR;
 	ASSERT (s_op3 = -8) REPORT "s_op3 not -8" SEVERITY ERROR;
 	ASSERT (s_op4 = 4) REPORT "s_op4 not 4" SEVERITY ERROR;
 
-	WAIT FOR 0.4 * clk_period;
+	WAIT FOR 1 * clk_period;
 	ASSERT (s_final_output = -256) REPORT "Final result is not -256" SEVERITY ERROR;
 	REPORT "The value of 's_final_output' is " & integer'image(s_final_output);
 
-	WAIT FOR 0.5 * clk_period;
 	ASSERT (s_op2 = 84) REPORT "s_op2 not 84" SEVERITY ERROR;
 	ASSERT (s_op5 = -32) REPORT "s_op5 not -32" SEVERITY ERROR;
 
-	WAIT FOR 0.5 * clk_period;
+	WAIT FOR 1 * clk_period;
 	ASSERT (s_final_output = 116) REPORT "Final result is not 116" SEVERITY ERROR;
 	REPORT "The value of 's_final_output' is " & integer'image(s_final_output);
 	WAIT FOR 0.9 * clk_period;
@@ -124,7 +122,7 @@ BEGIN
 	s_d <= -34;
 	s_e <= 44;
 
-	WAIT FOR 1.5 * clk_period;
+	WAIT FOR 1.1 * clk_period;
 	ASSERT (s_op1 = -19) REPORT "s_op1 not -19" SEVERITY ERROR;
 	ASSERT (s_op3 = 714) REPORT "s_op3 not 714" SEVERITY ERROR;
 	ASSERT (s_op4 = -51) REPORT "s_op4 not -51" SEVERITY ERROR;
@@ -139,7 +137,6 @@ BEGIN
 	ASSERT (s_op2 = -798) REPORT "s_op2 not -798" SEVERITY ERROR;
 	ASSERT (s_op5 = -36414) REPORT "s_op5 not -36414" SEVERITY ERROR;
 
-	WAIT FOR 0.6 * clk_period;
 	ASSERT (s_op1 = -37) REPORT "s_op1 not -37" SEVERITY ERROR;
 	ASSERT (s_op3 = -765) REPORT "s_op3 not -765" SEVERITY ERROR;
 	ASSERT (s_op4 = 2) REPORT "s_op4 not 2" SEVERITY ERROR;
@@ -150,24 +147,21 @@ BEGIN
 	s_d <= 26;
 	s_e <= -26;
 
-	WAIT FOR 0.4 * clk_period;
+	WAIT FOR 1 * clk_period;
 	ASSERT (s_final_output = 35616) REPORT "Final result is not 35616" SEVERITY ERROR;
 	REPORT "The value of 's_final_output' is " & integer'image(s_final_output);
 
-	WAIT FOR 0.5 * clk_period;
-	ASSERT (s_op2 = -1554) REPORT "s_op2 not -1554" SEVERITY ERROR;
-	ASSERT (s_op5 = -1530) REPORT "s_op5 not -1530" SEVERITY ERROR;
-
-	WAIT FOR 0.5 * clk_period;
-	ASSERT (s_final_output = -24) REPORT "Final result is not -24" SEVERITY ERROR;
-	REPORT "The value of 's_final_output' is " & integer'image(s_final_output);
-
-	WAIT FOR 0.2 * clk_period;
 	ASSERT (s_op1 = 45) REPORT "s_op1 not 45" SEVERITY ERROR;
 	ASSERT (s_op3 = -1014) REPORT "s_op3 not -1014" SEVERITY ERROR;
 	ASSERT (s_op4 = 66) REPORT "s_op4 not 66" SEVERITY ERROR;
 
+	ASSERT (s_op2 = -1554) REPORT "s_op2 not -1554" SEVERITY ERROR;
+	ASSERT (s_op5 = -1530) REPORT "s_op5 not -1530" SEVERITY ERROR;
+
 	WAIT FOR 1 * clk_period;
+	ASSERT (s_final_output = -24) REPORT "Final result is not -24" SEVERITY ERROR;
+	REPORT "The value of 's_final_output' is " & integer'image(s_final_output);
+
 	ASSERT (s_op2 = 1890) REPORT "s_op2 not 1890" SEVERITY ERROR;
 	ASSERT (s_op5 = -66924) REPORT "s_op5 not -66924" SEVERITY ERROR;
 

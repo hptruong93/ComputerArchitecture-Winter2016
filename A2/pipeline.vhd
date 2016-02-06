@@ -13,8 +13,16 @@ architecture behavioral of pipeline is
 
 signal i_op1, i_op2, i_op3, i_op4, i_op5 : integer := 0;
 
+
 begin
 	-- todo: complete this
+
+	op1 <= i_op1;
+	op2 <= i_op2;
+	op3 <= i_op3;
+	op4 <= i_op4;
+	op5 <= i_op5;
+	
 	process (clk)
 	begin
 		if rising_edge(clk) then
@@ -25,12 +33,6 @@ begin
 			i_op5 <= i_op3 * i_op4;
 			final_output <= i_op2 - i_op5;
 		end if;
-
-		op1 <= i_op1;
-		op2 <= i_op2;
-		op3 <= i_op3;
-		op4 <= i_op4;
-		op5 <= i_op5;
 	end process;
 
 end behavioral;
